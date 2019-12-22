@@ -84,6 +84,7 @@ Automated tests are checked in as part of POSTMAN API collection (in JSON format
 * For listing updates, hashmap directly repalces the specific entry in the map.
 * As of now, in-memory data structure(hashmap) is being used, but in real-time, a database would be ideal for persistent storage.
 * For CSV inputs, data is accepted with text/csv as the content type and then coverted to POJO bean by CSV Utils. The input is currently being read as string, but can be also be read via file/input stream.
+* CSV sample had different headers as compared to JSON, so to be in sync, replaced them accordingly adhering to common format.
 * Get API can return all the listings and also return specific listings if dealer ID is provided.
 * Search API returns matching vehicle listings based on the criteria parameters being passed (If no parameters are passed, it returns empty set as of now).
 
