@@ -15,7 +15,7 @@ From command line:
 
 For docker image build (from command line) & Kubernetes Deploy (if needed):
 
-1. docker build -t name:tag <path to directory which has both binary and image file>
+1. docker build -t name:tag \<path to directory which has both binary and image file\>
 2. Provide image registry URL under image placholder in deployment YAML
 3. kubectl apply -f deployment.yml
   
