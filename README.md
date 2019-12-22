@@ -92,5 +92,5 @@ Automated tests are checked in as part of POSTMAN API collection (in JSON format
 * If I had more time, I would handle search operations in a more generic fashion by optimizing and having the search criteria more flexible.
 * Error handling and validation constraints/checks.
 * Added swagger documentation instead of the API table above.
-* Added integration tests
+* Added unit/integration tests
 
