@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "e44bc6c5-813c-42bc-8d5e-ecd46468708d",
+		"name": "Heycar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Vehicle Listings (JSON)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"code\": \"a\",\n        \"make\": \"renault\",\n        \"model\": \"megane\",\n        \"kW\": 132,\n        \"year\": 2014,\n        \"color\": \"red\",\n        \"price\": 13990\n    },\n    {\n        \"code\": \"b\",\n        \"make\": \"swiss\",\n        \"model\": \"bmw\",\n        \"kW\": 256,\n        \"year\": 2018,\n        \"color\": \"green\",\n        \"price\": 15000\n    },\n    {\n        \"code\": \"c\",\n        \"make\": \"audi\",\n        \"model\": \"a4\",\n        \"kW\": 144,\n        \"year\": 2018,\n        \"color\": \"black\",\n        \"price\": 20000\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vehicle-listings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicle-listings",
+						"1"
+					]
+				},
+				"description": "Add Vehicle Listings (from JSON)"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Vehicle Listings (CSV)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/csv",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "code,make/model,power-in-ps,year,color,price\n1,mercedes/a 180,123,2014,black,15950\n2,audi/a3,111,2016,white,17210\n3,vw/golf,86,2018,green,14980\n4,skoda/octavia,86,2014,black,16990",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/upload_csv/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"upload_csv",
+						"2"
+					]
+				},
+				"description": "Add vehice listings from CSV Input"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Vehicle Listings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicle-listings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicle-listings"
+					]
+				},
+				"description": "Get all vehicle listings"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicle Listings for a Dealer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicle-listings?dealer_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicle-listings"
+					],
+					"query": [
+						{
+							"key": "dealer_id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Get all vehicle listings for a Dealer"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Vehicle Listings by Year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/search?year=2018",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2018"
+						}
+					]
+				},
+				"description": "Search Vehicle Listings by Year"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Vehicle Listings by Make",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/search?make=audi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "make",
+							"value": "audi"
+						}
+					]
+				},
+				"description": "Search Vehicle Listings by Make"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Vehicle Listings by Year & Color",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/search?year=2014&color=black",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2014"
+						},
+						{
+							"key": "color",
+							"value": "black"
+						}
+					]
+				},
+				"description": "Search Vehicle Listings by Year & Color"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
